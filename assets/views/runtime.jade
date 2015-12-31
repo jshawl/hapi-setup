@@ -1,20 +1,35 @@
-h2 Runtime
+h2#runtime
+  a(href='#runtime') Runtime
+div.hide-children
+  table.two-column
+    tr
+      td Execution Path
+      td= runtime.execPath
+    tr
+      td Command Line Arguments
+      td= runtime.argv
+    tr
+      td Node Command Line Arguments
+      td= runtime.execArgv
+  div
+    h3 Versions
+    table.two-column
+      tr
+        th Name
+        th Version
+      each value, key in runtime.versions
+        tr
+          td= key
+          td= value
 div
-  span Execution Path
-  span #{runtime.execPath}
-div
-  span Command Line Arguments
-  span [#{runtime.argv}]
-div
-  span Node Command Line Arguments
-  span #{runtime.execArgv}
-div
-  h3 Versions
-  ul
-    each value, key in runtime.versions
-      li= key + ' version: ' + value
-div
-  h3 Environment
-  ul
-    each value, key in runtime.env
-      li= key + ' = ' + value
+  h2#environment
+    a(href='#environment') Environment
+  div.hide-children
+    table.two-column
+      tr
+        th Variable
+        th Value
+      each value, key in runtime.env
+        tr
+          td= key
+          td= value

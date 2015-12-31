@@ -1,6 +1,46 @@
 @import 'jeet'
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700);
 
 normalize-css()
 
+*
+  box-sizing border-box
+
 body
+  color #3C3A31
   center(1024px)
+  padding 1em
+  max-width 50em
+
+table, tr, td, th
+  border 1px solid #fff
+  word-break break-word
+
+table
+  width 100%
+  background #F8F8F8
+  font-family Inconsolata, monospace
+td, th
+  padding .5em
+
+.two-column
+  td, th
+    width: 50%;
+
+.three-column
+  td, th
+    width: 33.33%;
+
+td:first-child
+  font-weight bold
+
+.plugins > div
+  display none
+
+.plugins > :target + div
+  display block
+
+.hide-children
+  display none
+:target ~ .hide-children
+  display block
